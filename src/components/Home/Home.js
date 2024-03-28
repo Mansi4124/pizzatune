@@ -5,12 +5,14 @@ import RowCol from "../RowCol";
 import Test from "../TestimonialComponent";
 import Testimonial from "../Testimonial";
 import "./Home.css";
+import CarouselNav from "../CarouselNav";
 
 const Home = () => {
   return (
     <>
       <div className="home-container">
-        <Carousel />
+        {/* <Carousel /> */}
+        <CarouselNav/>
         <DivFlex />
         <RowCol />
         <Offerdiv />
