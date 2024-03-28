@@ -1,5 +1,5 @@
 import "./Menu.css";
-import React, {useState } from "react";
+import React, { useRef, useState } from "react";
 import margeritta from "../../assets/margherita.jpg";
 import makhaniMashhoor from "../../assets/makhani_mashhoor.jpg";
 import doublecheese from "../../assets/double_cheese_margherita.jpg";
@@ -36,6 +36,7 @@ const garlicBreadMenu = [
     img: plainGarlicBread,
     price: 100,
     description: "Simple Garlic Bread",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -43,6 +44,7 @@ const garlicBreadMenu = [
     img: cornGarlicBread,
     price: 150,
     description: "Taste of corn ",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -50,6 +52,7 @@ const garlicBreadMenu = [
     img: cheeseGarlicBread,
     price: 120,
     description: "With cheesy taste",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -57,6 +60,7 @@ const garlicBreadMenu = [
     img: onionGarlicBread,
     price: 120,
     description: "With Onion",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -64,6 +68,7 @@ const garlicBreadMenu = [
     img: stuffedGarlicBread,
     price: 180,
     description: "With stuffing of jalapenos and corns",
+    qty: 0
   },
 ];
 
@@ -74,6 +79,7 @@ const packOf4Menu = [
     img: packOf4,
     price: 500,
     description: "4 pizzas",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -81,6 +87,7 @@ const packOf4Menu = [
     img: packof4,
     price: 300,
     description: "4 pizzas",
+    qty: 0
   },
 ];
 const menuItems = [
@@ -90,6 +97,7 @@ const menuItems = [
     img: margeritta,
     price: 155,
     description: "Enjoy 100% Real Mozzarella Cheese Over A Zesty Gravy",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -97,6 +105,7 @@ const menuItems = [
     img: makhaniMashhoor,
     price: 160,
     description: "Crisp onlion with real mozzarella & cheddar cheese",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -105,6 +114,7 @@ const menuItems = [
     price: 175,
     description:
       "Extra Loaded 100% Real Mozzarella Cheese Over A Zesty Tomato Gravy",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -113,6 +123,7 @@ const menuItems = [
     price: 180,
     description:
       "Loaded With Crips Green Peppers, Fresh Cut Onion,Juicy Tomatoes With 100% Mozzarella",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -121,6 +132,7 @@ const menuItems = [
     price: 170,
     description:
       "Fresh Juice Sweet Corn,Olives And Mushroom With 100% Real Mozzarella And Cheddar Cheesea",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -129,6 +141,7 @@ const menuItems = [
     price: 190,
     description:
       "Delightful Combination Of Onion,Yellow Bell Pepper,Cherry Tomatoes & Grilled Mushroom",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -137,6 +150,7 @@ const menuItems = [
     price: 180,
     description:
       "Flavourful Trio Of Juicy Paneer, Freshly Cut Pineapple, Sweet Corn With Extra Cheese",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -145,6 +159,7 @@ const menuItems = [
     price: 200,
     description:
       "It Is Hot. It Is So Sweet. Sweet & Juicy Golden Corn With Red Paprika, Jalapenos",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -153,6 +168,7 @@ const menuItems = [
     price: 170,
     description:
       "Topped With Double Paneer And The Refreshing Burst From The Capsicum, Onion And Red Paprika",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -161,6 +177,7 @@ const menuItems = [
     price: 190,
     description:
       "Flavourful Twist Of Cheesy Sauce With Paneer Tikka, Chopped Onions, Red Paprika, Capsicum",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -169,6 +186,7 @@ const menuItems = [
     price: 210,
     description:
       "Paneer Chunks With Your Favourite Toppings Of Mushroom, Olives, Red&Green Bell Paper",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -177,6 +195,7 @@ const menuItems = [
     price: 190,
     description:
       "Cheese Lovers Paradise. Loaded With Fresh Paneer,Baby Corn, Mushrooms, Crisp Capsicum",
+    qty: 0,
   },
   {
     veg: vegIcon,
@@ -185,6 +204,7 @@ const menuItems = [
     price: 200,
     description:
       "The Magic Of 9 Kind Of Cheese On Your Pizza Long Stands Of Stringy Mozzarella",
+    qty: 0,
   },
 ];
 
@@ -195,6 +215,7 @@ const bevarages = [
     img: kinley,
     price: 20,
     description: "",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -202,6 +223,7 @@ const bevarages = [
     img: cocacola750ml,
     price: 45,
     description: "",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -209,6 +231,7 @@ const bevarages = [
     img: cocacola,
     price: 30,
     description: "",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -216,6 +239,7 @@ const bevarages = [
     img: thumbsup750ml,
     price: 45,
     description: "",
+    qty: 0
   },
   {
     veg: vegIcon,
@@ -223,14 +247,128 @@ const bevarages = [
     img: thumbsup,
     price: 30,
     description: "",
+    qty: 0
   },
 ];
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(null);
-  
+  const pizzaRef = useRef(null);
+  const garlicBreadRef = useRef(null);
+  const packOf4Ref = useRef(null);
+  const bevaragesRef = useRef(null);
 
-  
+  const [pizzaMenu, setPizzaMenu] = useState(menuItems);
+  const [garlicBreadsMenu, setGarlicBreadsMenu] = useState(garlicBreadMenu);
+  const [packOfMenu, setPackOfMenu] = useState(packOf4Menu);
+  const [bevaragesMenu, setBevaragesMenu] = useState(bevarages);
+
+  const scrollToPizza = () => {
+    pizzaRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToGarlicBread = () => {
+    console.log("scrollToGarlicBread");
+    garlicBreadRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToPackOf4 = () => {
+    console.log("scrollToPackOf4");
+    packOf4Ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToBevarages = () => {
+    console.log("scrollToBevarages");
+    bevaragesRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const addPizza = (item) => {
+    console.log("addMenu", item);
+    const updatedMenu = pizzaMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty + 1;
+      }
+      return menu;
+    });
+    setPizzaMenu(updatedMenu);
+  }
+
+  const removePizza = (item) => {
+    console.log("removeMenu", item);
+    const updatedMenu = pizzaMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty - 1;
+      }
+      return menu;
+    });
+    setPizzaMenu(updatedMenu);
+  }
+
+  const addGarlicBread = (item) => {
+    console.log("addMenu", item);
+    const updatedMenu = garlicBreadsMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty + 1;
+      }
+      return menu;
+    });
+    setGarlicBreadsMenu(updatedMenu);
+  }
+
+  const removeGarlicBread = (item) => {
+    console.log("removeMenu", item);
+    const updatedMenu = garlicBreadsMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty - 1;
+      }
+      return menu;
+    });
+    setGarlicBreadsMenu(updatedMenu);
+  }
+
+  const addPackOf4 = (item) => {
+    console.log("addMenu", item);
+    const updatedMenu = packOfMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty + 1;
+      }
+      return menu;
+    });
+    setPackOfMenu(updatedMenu);
+  }
+
+  const removePackOf4 = (item) => {
+    console.log("removeMenu", item);
+    const updatedMenu = packOfMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty - 1;
+      }
+      return menu;
+    });
+    setPackOfMenu(updatedMenu);
+  }
+
+  const addBevarages = (item) => {
+    console.log("addMenu", item);
+    const updatedMenu = bevaragesMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty + 1;
+      }
+      return menu;
+    });
+    setBevaragesMenu(updatedMenu);
+  }
+
+  const removeBevarages = (item) => {
+    console.log("removeMenu", item);
+    const updatedMenu = bevaragesMenu.map((menu) => {
+      if (menu.name === item.name) {
+        menu.qty = menu.qty - 1;
+      }
+      return menu;
+    });
+    setBevaragesMenu(updatedMenu);
+  }
 
   return (
     <>
@@ -262,105 +400,176 @@ const Menu = () => {
       <div className="Menu-Dist">
         <div className="d-flex flex-column ">
           <div className="flex-title">Categories</div>
-          <div
-            className="menu-dist-title"
-            
-          >
+          <div className="menu-dist-title" onClick={() => scrollToPizza()}>
             <div>Pizza</div>
           </div>
           <div
             className="menu-dist-title "
-          
+            onClick={() => scrollToGarlicBread()}
           >
             <div>Garlic Bread</div>
           </div>
-          <div
-            className="menu-dist-title"
-          
-          >
+          <div className="menu-dist-title" onClick={() => scrollToPackOf4()}>
             <div>Pack of 4</div>
           </div>
-          <div
-            className="menu-dist-title"
-          
-          >
+          <div className="menu-dist-title" onClick={() => scrollToBevarages()}>
             <div>Bevarages</div>
           </div>
         </div>
       </div>
       <div className="Menu-items">
         <div className="Menu-title">Explore Menu</div>
-        <div  className="submenu-title">
-          PIZZA
-        </div>
-        <div className="menu-items-container">
-          {menuItems.map((item, index) => {
-            return (
-              <div className="menu-item-card">
-                <img src={item.veg} className="img-veg" />
-                <img src={item.img} alt={item.name} className="img-item" />
-                <h5>{item.name}</h5>
-                <p>{item.description}</p>
-                <h6>Rs.{item.price}</h6>
+        <div className="pizza" ref={pizzaRef}>
+          <div className="submenu-title">PIZZA</div>
+          <div className="menu-items-container">
+            {pizzaMenu.map((item, index) => {
+              return (
+                <div className="menu-item-card">
+                  <div className="left-card-item-container">
+                    <img src={item.veg} className="img-veg" />
+                    <h5>{item.name}</h5>
+                    <div className="menu-description">{item.description}</div>
+                    <h6>Rs.{item.price}</h6>
+                  </div>
+                  <div className="right-card-item-container">
+                    <div className="img-item-menu-container">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="img-item-menu"
+                      />
+                    </div>
+                    {
+                      item.qty > 0 ? (
+                        <div className="selected-qty-container">
+                        <div className="menu-minus-qty-button" onClick={() => removePizza(item)}>-</div>
+                        <div className="menu-qty">{item.qty}</div>
+                        <div className="menu-add-qty-button" onClick={() => addPizza(item)}>+</div>
+                        </div>
 
-                {/* <button className="">Add+</button> */}
-              </div>
-            );
-          })}
+                      ) : (
+                        <div className="menu-add-button" onClick={() => addPizza(item)}>Add+</div>
+                      )
+                    }
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div  className="submenu-title" >
-          GARLIC BREAD
-        </div>
-        <div className="menu-items-container">
-          {garlicBreadMenu.map((item, index) => {
-            return (
-              <div className="menu-item-card">
-                <img src={item.veg} className="img-veg" />
-                <img src={item.img} alt={item.name} className="img-item" />
-                <h5>{item.name}</h5>
-                <p>{item.description}</p>
-                <h6>Rs.{item.price}</h6>
+        <div ref={garlicBreadRef}>
+          <div className="submenu-title">GARLIC BREAD</div>
+          <div className="menu-items-container">
+            {garlicBreadsMenu.map((item, index) => {
+              return (
+                <div className="menu-item-card">
+                  <div className="left-card-item-container">
+                    <img src={item.veg} className="img-veg" />
+                    <h5>{item.name}</h5>
+                    <div className="menu-description">{item.description}</div>
+                    <h6>Rs.{item.price}</h6>
+                  </div>
+                  <div className="right-card-item-container">
+                    <div className="img-item-menu-container">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="img-item-menu"
+                      />
+                    </div>
+                    {
+                      item.qty > 0 ? (
+                        <div className="selected-qty-container">
+                        <div className="menu-minus-qty-button" onClick={() => removeGarlicBread(item)}>-</div>
+                        <div className="menu-qty">{item.qty}</div>
+                        <div className="menu-add-qty-button" onClick={() => addGarlicBread(item)}>+</div>
+                        </div>
 
-                {/* <button className="">Add+</button> */}
-              </div>
-            );
-          })}
+                      ) : (
+                        <div className="menu-add-button" onClick={() => addGarlicBread(item)}>Add+</div>
+                      )
+                    }
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="submenu-title">
-          PACK OF 4 PIZZA
-        </div>
-        <div className="menu-items-container">
-          {packOf4Menu.map((item, index) => {
-            return (
-              <div className="menu-item-card">
-                <img src={item.veg} className="img-veg" />
-                <img src={item.img} alt={item.name} className="img-item" />
-                <h5>{item.name}</h5>
-                <p>{item.description}</p>
-                <h6>Rs.{item.price}</h6>
+        <div ref={packOf4Ref}>
+          <div className="submenu-title">PACK OF 4 PIZZA</div>
+          <div className="menu-items-container">
+            {packOfMenu.map((item, index) => {
+              return (
+                <div className="menu-item-card">
+                  <div className="left-card-item-container">
+                    <img src={item.veg} className="img-veg" />
+                    <h5>{item.name}</h5>
+                    <div className="menu-description">{item.description}</div>
+                    <h6>Rs.{item.price}</h6>
+                  </div>
+                  <div className="right-card-item-container">
+                    <div className="img-item-menu-container">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="img-item-menu"
+                      />
+                    </div>
+                    {
+                      item.qty > 0 ? (
+                        <div className="selected-qty-container">
+                        <div className="menu-minus-qty-button" onClick={() => removePackOf4(item)}>-</div>
+                        <div className="menu-qty">{item.qty}</div>
+                        <div className="menu-add-qty-button" onClick={() => addPackOf4(item)}>+</div>
+                        </div>
 
-                {/* <button className="">Add+</button> */}
-              </div>
-            );
-          })}
+                      ) : (
+                        <div className="menu-add-button" onClick={() => addPackOf4(item)}>Add+</div>
+                      )
+                    }
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="submenu-title">
-          BEVERAGES
-        </div>
-        <div  className="menu-items-container">
-          {bevarages.map((item, index) => {
-            return (
-              <div className="menu-item-card">
-                <img src={item.veg} className="img-veg" />
-                <img src={item.img} alt={item.name} className="img-item" />
-                <h5>{item.name}</h5>
-                <p>{item.description}</p>
-                <h6>Rs.{item.price}</h6>
+        <div ref={bevaragesRef}>
+          <div className="submenu-title">BEVERAGES</div>
+          <div className="menu-items-container">
+            {bevaragesMenu.map((item, index) => {
+              return (
+                <div className="menu-item-card">
+                  <div className="left-card-item-container">
+                    <img src={item.veg} className="img-veg" />
+                    <h5>{item.name}</h5>
+                    <div className="menu-description">{item.description}</div>
+                    <h6>Rs.{item.price}</h6>
+                  </div>
+                  <div className="right-card-item-container">
+                    <div className="img-item-menu-container">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="img-item-menu"
+                      />
+                    </div>
+                    {
+                      item.qty > 0 ? (
+                        <div className="selected-qty-container">
+                        <div className="menu-minus-qty-button" onClick={() => removeBevarages(item)}>-</div>
+                        <div className="menu-qty">{item.qty}</div>
+                        <div className="menu-add-qty-button" onClick={() => addBevarages(item)}>+</div>
+                        </div>
 
-                {/* <button className="">Add+</button> */}
-              </div>
-            );
-          })}
+                      ) : (
+                        <div className="menu-add-button" onClick={() => addBevarages(item)}>Add+</div>
+                      )
+                    }
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
