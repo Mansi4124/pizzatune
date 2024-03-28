@@ -1,0 +1,78 @@
+.title{
+    text-align:center;
+    padding-top:70px;
+    font-weight: bold;
+    
+}
+ 
+ 
+.image1{
+  width:90%;
+  height: 320px;
+  border-radius: 12px;
+ 
+}
+
+
+.image2{
+  width:90%;
+  height: 320px;
+  border-radius: 12px;
+ 
+
+}
+
+.image3{
+  width:90%;
+  height: 320px;
+  border-radius: 12px;
+ 
+
+}
+
+
+.popular-items1{
+  padding-top: 50px;
+}
+.popular-items2{
+  padding-top: 30px;
+}
+
+
+/* Add this CSS to display text on hover */
+.image-container {
+  position: relative;
+  margin: 0 20px;
+}
+
+.image-text {
+  position: absolute;
+  top: 0;
+  left: 10;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background color */
+  color: white; /* Text color */
+  border-radius: 12px; /* Rounded corners */
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.3s ease; /* Add smooth transition effect */
+}
+
+.popular-title{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  padding-top: 40px;
+}
+
+.image-text p {
+  padding: 20px; /* Padding around the text */
+}
+
+.image-container:hover .image-text {
+  opacity: 1; /* Display text on hover */
+}

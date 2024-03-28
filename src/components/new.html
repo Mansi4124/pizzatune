@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        .swiper-slide {
+            background-color: rgba(226, 234, 238, 0.7); /* Updated to a slightly transparent color */
+            width: 300px;
+            height: 300px;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+            padding: 20px; /* Added padding for better readability */
+        }
+
+        body {
+            background: #111;
+            font-family: sans-serif;
+            font-size: 14px;
+            color: #000000; /* Changed text color to white for better contrast */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+
+        .swiper-slider img {
+            display: block;
+            width: 100%;
+        }
+
+        blockquote {
+            margin: 10;
+            font-size: 17px;
+            opacity: 0.9 /* Adjusted opacity for better readability */
+        }
+
+        blockquote footer{
+            padding-top: 20px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                
+                <blockquote>
+                    Where do I start. I don't usually do reviews of restaurants but I feel that this place really deserves one. They have a wide range of menu options on BOGO offer. We chose to try 2 different Pizzas, and wow. 10/10 and would recommend everyone to order from this place at least once.
+                    <footer>-Sahil Sood</footer>
+                </blockquote>
+            </div>
+            <div class="swiper-slide">
+                <blockquote>"Wow! Pizzatune is hands down the BEST pizza place in town. From the fast delivery service to all the types of pizza, pasta, and garlic bread your heart desires."  
+                    <footer>-Manan Desai</footer>
+                </blockquote>
+   
+            </div>
+            <div class="swiper-slide">
+                <blockquote >
+                    "This restaurant exceeded my expectations! The ambiance was delightful, and the staff were incredibly attentive. I highly recommend trying their pasta dishes—they're simply divine!"
+                    <footer>-Shaili Bhatt</footer>
+                </blockquote>
+            </div>
+            <div class="swiper-slide">
+                <blockquote >
+                   "I was blown away by the flavors, the pizzas were amazing. Can't wait to order again. Highly recommended. Tastiest dinner I've had since pandemic happened." 
+                    <footer>- Robin Sharma</footer>
+                </blockquote>
+            </div>
+           
+            <!-- Add more swiper-slide elements for additional testimonials if needed -->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+              
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+</body>
+</html>
