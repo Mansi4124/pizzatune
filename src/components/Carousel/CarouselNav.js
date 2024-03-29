@@ -1,12 +1,12 @@
 import React from "react";
 import "./CarouselNav.css";
-import img1 from "./../assets/pizza20.png";
-import img2 from "./../assets/pizza28.jpg";
-import img3 from "./../assets/pizza29.jpg";
-import img4 from "./../assets/logo.jpg";
-import img5 from "./../assets/pizza25.jpg";
+import img1 from "../../assets/pizza20.png";
+import img2 from "../../assets/pizza28.jpg";
+import img3 from "../../assets/pizza29.jpg";
+import img4 from "../../assets/logo.jpg";
+import img5 from "../../assets/pizza25.jpg";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 
 export default function CarouselNav() {
   return (

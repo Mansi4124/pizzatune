@@ -1,10 +1,10 @@
 import React from "react";
 import "./RowCol.css";
 
-import img1 from "./../assets/pizza-popular1.webp";
-import img2 from "./../assets/pizza_offer4.jpg";
-import img3 from "./../assets/pizza-popular3.jpg";
-import img4 from "./../assets/pizza15.jpg";
+import img1 from "../../assets/pizza-popular1.webp";
+import img2 from "../../assets/pizza_offer4.jpg";
+import img3 from "../../assets/pizza-popular3.jpg";
+import img4 from "../../assets/pizza15.jpg";
 export default function RowCol() {
   return (
     <>
