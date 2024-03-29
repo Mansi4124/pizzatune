@@ -29,6 +29,8 @@ import cocacola from "../../assets/cocacola__tin.jpg";
 import cocacola750ml from "../../assets/cocacola.jpg";
 import thumbsup from "../../assets/thumbsup_tin.jpg";
 import thumbsup750ml from "../../assets/thumbsup.jpg";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer";
 const garlicBreadMenu = [
   {
     veg: vegIcon,
@@ -372,30 +374,7 @@ const Menu = () => {
 
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-dark top-0 w-100 z-2">
-            <div className="container">
-                <a href="#" className="navbar-brand text-light">PIZZATUNE</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end w-100">
-                        <li className="nav-item">
-                            <a href="/" className="nav-link text-light text-center active" aria-current="page">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="/about" className="nav-link text-light text-center">About Us</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="/menu" className="nav-link text-light text-center">Menu</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link text-light text-center">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+     <Navbar />
     <div className="Menu">
       <div className="Menu-Dist">
         <div className="d-flex flex-column ">
@@ -418,7 +397,11 @@ const Menu = () => {
         </div>
       </div>
       <div className="Menu-items">
-        <div className="Menu-title">Explore Menu</div>
+        <div className="Menu-back"></div>
+        <div className="Menu-title">
+              Explore menu
+        </div>
+        <div></div>
         <div className="pizza" ref={pizzaRef}>
           <div className="submenu-title">PIZZA</div>
           <div className="menu-items-container">
@@ -573,6 +556,8 @@ const Menu = () => {
         </div>
       </div>
     </div>
+
+    
     </>
     
   );

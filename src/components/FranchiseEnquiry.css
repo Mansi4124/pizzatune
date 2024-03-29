@@ -1,27 +1,29 @@
 .franchiseContainer {
-  background-image: url("./../assets/pizza-popular1.webp"); /* Background image */
-
+  background-image: url("./../assets/pizza29.png"); /* Background image */
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   display: flex;
+ 
   justify-content: center;
   align-items: center;
   background-attachment: fixed;
-  
+ 
 }
 
+
 .franchiseBox {
-  width: 80%;
+  width: 90%;
   border: 2px solid #0f0e0e;
-  border-radius: 10px;
-  padding: 30px;
-  margin-top: 40px; /* Center the box horizontally */
+  border-radius: 8px;
+  padding: 0px;
+  margin-top: 60px; /* Center the box horizontally */
   background-color: rgba(229, 223, 220, 0.9); /* Transparent white background */
 }
 
 .FranchiseTitle {
   text-align: center;
   color: rgb(17, 17, 17);
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -62,3 +64,4 @@ button {
   transition: background-color 0.3s ease;
   margin: 20px 0; /* Adjusted margin */
 }
+

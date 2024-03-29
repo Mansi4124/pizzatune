@@ -6,6 +6,7 @@ import Test from "../TestimonialComponent";
 import Testimonial from "../Testimonial";
 import "./Home.css";
 import CarouselNav from "../CarouselNav";
+import Footer from "../Footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <RowCol />
         <Offerdiv />
         <Test />
+        <Footer/>
       </div>
     </>
   );

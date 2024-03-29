@@ -1,20 +1,35 @@
 .offer-title{
     text-align: center;
-   padding-top: 120px;
+   padding-top: 40px;
    font-weight: bold;
-   font-style: italic;
+   animation: pulse1 4s 1 forwards;
    
 }
 
+@keyframes pulse1 {
+    from {
+      transform: scale(1);
+   
+    }
+    to {
+      transform: scale(1.8); /* Increased scale */
+    }
+  }
+
 .coupon{
     position: relative;
-    top:20px;
+    top:100px;
+}
+
+.offer-coupon{
+    background-color: #c9cdc9;
+    padding-bottom: 120px;
 }
 
 .coupon-container{
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .coupon-image{
     height: 30%;
@@ -35,64 +50,3 @@
 }
 
 
-.offer1{
-    border: 1px solid black;
-    background-image: url(./../assets/pizza24.avif);
-    height: 300px;
-    background-position: center;
-    background-size: cover;
-    margin-right: 20px;
-}
-
-.offer1 h1{
-    padding: 70px;
-    color: aliceblue;
-}
-
-.offer1 h3{
-    color: rgb(1, 10, 18);
-   
-    height:max-content;
-    width: 40%;
-    
-    padding:6px;
-    position: relative;
-    left: 70px;
-    bottom: 30px;
-    text-align: center;
-    background-color:  rgb(156, 149, 149);
-}
-.offer2{
-    border: 1px solid black;;
-    /* background-image: url(./../assets/pizza16_coupon.jpg); */
-    height: 300px;
-    width: fit-content;
-
-    /* background-position: center;
-    background-size: cover; */
-}
-
-.offer2 h1{
-    color: aliceblue;
-    position: relative;
-    left: 290px;
-    top:70px;
-
-}
-
-.offer2 h3{
-    position: relative;
-    top:100px;
-    left: 290px;
-    color: rgb(10, 10, 10);
-    background-color:  rgb(156, 149, 149);
-    text-align: center;
-    padding: 6px;
-    height:max-content;
-    width: 40%;
-   
-}
-
-.row {
-    overflow: hidden; /* Hide the scrollbar */
-}

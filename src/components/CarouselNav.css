@@ -1,8 +1,5 @@
-body,
-h2,
-p {
-    font-family: 'Lato', sans-serif;
-}
+
+
 
 .navbar .navbar-toggler {
     border: none;
@@ -20,8 +17,12 @@ p {
     height: 100vh;
 }
 
+#carouselExampleAutoplaying h1 {
+    font-size: 4rem;
+}
+
 #carouselExampleAutoplaying h2 {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 #carouselExampleAutoplaying h2,
@@ -29,11 +30,19 @@ p {
     text-shadow: 2px 2px 8px #000000;
 }
 
+.logo{
+    border-radius: 50%;
+    width: 200px;
+    margin:0px auto;
+}
+
 @media only screen and (max-width: 992px) {
     #carouselExampleAutoplaying {
         height: auto;
     }
-
+    .logo{
+        display: none;
+    }
     #navbarSupportedContent {
         background: transparent;
         backdrop-filter: blur(15px);
@@ -44,13 +53,38 @@ p {
 }
 
 @media only screen and (max-width: 768px) {
-    #carouselExampleAutoplaying h2 {
-        font-size: 4rem;
+    
+
+    #carouselExampleAutoplaying h1 {
+        display: none;
     }
+    
+    #carouselExampleAutoplaying h2 {
+        font-size: 1rem;
+    }
+
+    .btn{
+        width: 120px;
+        height:40px;
+        font-size: 10px;
+    }
+
+    .discover{
+    
+        font-size: 13px;
+        
+    }
+    
+    .discover1{
+    
+        font-size: 11px;
+        
+    }
+
 }
 
 @media only screen and (max-width: 576px) {
     #carouselExampleAutoplaying h2 {
-        font-size: 2.5rem;
+        font-size: 1rem;   
     }
 }
