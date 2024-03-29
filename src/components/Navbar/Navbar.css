@@ -1,0 +1,21 @@
+.navbar .navbar-toggler {
+    border: none;
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert();
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-brand{
+    margin-left: 10px;
+   display: visible;
+}
+
+.logoNav{
+    height : 50px ;
+    border-radius: 50%;
+}

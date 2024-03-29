@@ -1,26 +1,26 @@
 /* Styles for the main container */
+
+
 .mainDiv {
     font-weight: bold;
-    margin-top: 50px;
+    margin: 50px 0px;
     text-align: center;
-   
     font-size: 20px;
-    height: 70px;
+    height: 100px;
     display: flex; 
     align-items: center; /* Center items vertically */
-    
-   
+    background-color: #afc4af ;
 }
 
 /* Styles for the inner divs */
 .subDiv {
     text-align: center;
     flex: 1; /* Distribute space equally among inner divs */
-    padding: 10px; /* Add padding for better spacing */
-    background-color: #e4d4d4; /* White background */
-    border-radius: 6px; /* Rounded corners */
+    padding: 15px; /* Add padding for better spacing */
+    background-color: #131111; /* White background */
+   /* Rounded corners */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-
+    color: rgb(239, 151, 64);
 }
 
 /* Hover effect for inner divs */
@@ -29,6 +29,24 @@
     
 }
 
+@media only screen and (max-width: 992px) {
+    .mainDiv {
+        
+        flex-direction: column;
+        display: flex; 
+        margin: 50px 0px 50px 0px;
+        flex-grow: 1;
+        
+    }
+
+    .subDiv{
+        flex-direction: column;
+        width: 100%;
+        padding: 5px;
+        font-size: 15px;
+        flex-grow: 1;
+    }
+}
 
 
 

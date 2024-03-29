@@ -20,9 +20,9 @@ import Menu from "./components/Menu/Menu";
 const img1 = "logo.png";
 function App() {
   return (
-    <>
+    <div className="App">
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

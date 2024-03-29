@@ -2,13 +2,21 @@ import React from "react";
 import "./About.css";
 import image from "./../assets/logo-about.png";
 import image1 from "./../assets/about-photo2.jpg";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer";
 
 export default function About() {
   return (
     <>
+      <div style={{ backgroundColor: "#000000" }}>
+        <Navbar />
+      </div>
+      <div className="about-header">
+      <h1>Get to Know Us</h1>
+      </div>
       <div className="about-background">
         <div className="heading">
-          <h1>About Us</h1>
+          
           <p>
             {" "}
             Pizzatune is the place where you can indulge in delicious pizzas and
@@ -59,6 +67,7 @@ export default function About() {
           </section>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

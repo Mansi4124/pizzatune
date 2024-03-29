@@ -29,6 +29,8 @@ import cocacola from "../../assets/cocacola__tin.jpg";
 import cocacola750ml from "../../assets/cocacola.jpg";
 import thumbsup from "../../assets/thumbsup_tin.jpg";
 import thumbsup750ml from "../../assets/thumbsup.jpg";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer";
 const garlicBreadMenu = [
   {
     veg: vegIcon,
@@ -371,6 +373,8 @@ const Menu = () => {
   }
 
   return (
+    <>
+     <Navbar />
     <div className="Menu">
       <div className="Menu-Dist">
         <div className="d-flex flex-column ">
@@ -393,7 +397,11 @@ const Menu = () => {
         </div>
       </div>
       <div className="Menu-items">
-        <div className="Menu-title">Explore Menu</div>
+        <div className="Menu-back"></div>
+        <div className="Menu-title">
+              Explore menu
+        </div>
+        <div></div>
         <div className="pizza" ref={pizzaRef}>
           <div className="submenu-title">PIZZA</div>
           <div className="menu-items-container">
@@ -548,6 +556,10 @@ const Menu = () => {
         </div>
       </div>
     </div>
+
+    
+    </>
+    
   );
 };
 

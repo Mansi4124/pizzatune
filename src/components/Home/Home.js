@@ -5,16 +5,20 @@ import RowCol from "../RowCol";
 import Test from "../TestimonialComponent";
 import Testimonial from "../Testimonial";
 import "./Home.css";
+import CarouselNav from "../CarouselNav";
+import Footer from "../Footer";
 
 const Home = () => {
   return (
     <>
       <div className="home-container">
-        <Carousel />
+        {/* <Carousel /> */}
+        <CarouselNav/>
         <DivFlex />
         <RowCol />
         <Offerdiv />
         <Test />
+        <Footer/>
       </div>
     </>
   );

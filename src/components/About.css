@@ -8,7 +8,17 @@
   background-color: #e4dede;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.about-header{
+  background-color: #070606;
+  width:100%;
+  height: 200px;
+}
 
+.about-header h1{
+  padding-top:90px;
+  color: #d06213ca;
+  font-size: 50px;
+}
 .heading {
   width: 90%;
   display: flex;
@@ -16,26 +26,12 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 20px;
+  padding-top: 25px;
   margin: 0px auto;
 }
 
-.heading h1 {
-  font-size: 50px;
-  color: #070606;
-  margin-bottom: 25px;
-  position: relative;
-}
 
-.heading h1::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  display: block;
-  margin: 0 auto;
-  background-color: #4caf50;
-}
+
 
 .heading p {
   font-size: 20px;
@@ -70,12 +66,12 @@
   }
 
 .about-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
 .about-image2 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
   }
@@ -104,12 +100,19 @@
 }
 
 @media screen and (max-width: 768px) {
+  .about-header{
+    height: 120px;
+  }
+  
+  .about-header h1{
+    font-size: 25px;
+    padding-top: 70px;
+  }
+  
   .heading {
     padding: 0px 20px;
   }
-  .heading h1 {
-    font-size: 36px;
-  }
+  
   .heading p {
     font-size: 17px;
     margin-bottom: 0px;
@@ -124,6 +127,10 @@
   .about-image {
     margin-right: 0px;
     margin-bottom: 20px;
+  }
+  .about-image2 {
+   
+    margin: auto;
   }
   .about-content p {
     padding: 0px;
