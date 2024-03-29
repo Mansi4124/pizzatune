@@ -1,12 +1,12 @@
 import Carousel from "../Carousel";
-import DivFlex from "../DivFlex";
-import Offerdiv from "../Offerdiv";
-import RowCol from "../RowCol";
-import Test from "../TestimonialComponent";
+import DivFlex from "../Desc/DivFlex";
+import Offerdiv from "../Offer/Offerdiv";
+import RowCol from "../PhotoGallary/RowCol";
+import Test from "../Testimonial/TestimonialComponent";
 import Testimonial from "../Testimonial";
 import "./Home.css";
-import CarouselNav from "../CarouselNav";
-import Footer from "../Footer";
+import CarouselNav from "../Carousel/CarouselNav";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   return (

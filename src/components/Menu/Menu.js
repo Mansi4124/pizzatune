@@ -27,7 +27,7 @@ import cocacola750ml from "../../assets/cocacola.jpg";
 import thumbsup from "../../assets/thumbsup_tin.jpg";
 import thumbsup750ml from "../../assets/thumbsup.jpg";
 import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import Cart from "../Cart/Cart";
 import cartGIF from "../../assets/icons8-cart.gif";
 const garlicBreadMenu = [

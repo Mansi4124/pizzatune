@@ -1,9 +1,9 @@
 import React from "react";
 import "./About.css";
-import image from "./../assets/logo-about.png";
-import image1 from "./../assets/about-photo2.jpg";
-import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer";
+import image from "../../assets/logo-about.png";
+import image1 from "../../assets/about-photo2.jpg";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 export default function About() {
   return (

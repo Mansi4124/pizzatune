@@ -1,8 +1,8 @@
 import React from "react";
 import "./Offerdiv.css";
 
-import offer2 from "./../assets/pizza16_coupon.jpg";
-import offer1 from "./../assets/pizza24.png";
+import offer2 from "../../assets/pizza16_coupon.jpg";
+import offer1 from "../../assets/pizza24.png";
 export default function Offerdiv() {
   return (
     <>

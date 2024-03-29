@@ -1,7 +1,7 @@
 import React from "react";
 import "./FranchiseEnquiry.css";
-import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 export default function FranchiseEnquiry() {
   return (

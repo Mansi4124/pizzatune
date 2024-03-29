@@ -1,5 +1,5 @@
 .franchiseContainer {
-  background-image: url("./../assets/pizza29.png"); /* Background image */
+  background-image: url("../../assets/pizza29.png"); /* Background image */
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   display: flex;
